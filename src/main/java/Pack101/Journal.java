@@ -9,18 +9,22 @@ package Pack101;
  * @author maria
  */
 public class Journal extends Book {
+
     private String conferenceName;
     private int conferenceNo;
 
     public Journal() {
     }
 
-    public Journal(String conferenceName, int conferenceNo, BirthDate date, Author author, String title, int no, String genre, int version, int count) {
-        super(date, author, title, no, genre, version, count);
+    public Journal(String conferenceName, int conferenceNo, BirthDate date, Author author, String title, int no, String genre, int version) {
+        super(date, author, title, no, genre, version);
         this.conferenceName = conferenceName;
         this.conferenceNo = conferenceNo;
     }
-    
+
+    public Journal(BirthDate date, Author author, String title, int no, String genre, int version) {
+        super(date, author, title, no, genre, version);
+    }
 
     public String getConferenceName() {
         return conferenceName;
@@ -40,6 +44,12 @@ public class Journal extends Book {
 
     @Override
     public String getInfo() {
-        return super.getInfo()+" ,ConferenceName :"+this.conferenceName+" ,ConferenceNo :"+this.conferenceNo;
+        return super.getInfo() + " ,ConferenceName :" + this.conferenceName + " ,ConferenceNo :" + this.conferenceNo;
     }
+
+    @Override
+    public String toString() {
+        return "Journal{" + "conferenceName=" + conferenceName + ", conferenceNo=" + conferenceNo + '}';
+    }
+
 }

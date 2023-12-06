@@ -8,17 +8,27 @@ package Pack101;
  *
  * @author maria
  */
-public class Magazine extends Book{
+public class Magazine extends Book {
+
     private int issueNo;
     private BirthDate releaseDate;
 
     public Magazine() {
     }
-    
-    public Magazine(BirthDate date, Author author, String title, int no, String genre, int version, int count,int issueNo, BirthDate releaseDate) {
-        super(date, author, title, no, genre, version, count);
+
+    public Magazine(BirthDate date, Author author, String title, int no, String genre, int version, int issueNo, BirthDate releaseDate) {
+        super(date, author, title, no, genre, version);
         this.issueNo = issueNo;
         this.releaseDate = releaseDate;
+    }
+
+    public Magazine(BirthDate date, Author author, String title, int no, String genre, int version) {
+        super(date, author, title, no, genre, version);
+    }
+
+    public Magazine(int issueNo, BirthDate date, Author author, String title, int no, String genre, int version) {
+        super(date, author, title, no, genre, version);
+        this.issueNo = issueNo;
     }
 
     public int getIssueNo() {
@@ -39,6 +49,12 @@ public class Magazine extends Book{
 
     @Override
     public String getInfo() {
-        return super.getInfo()+ " ,issueNo :"+this.issueNo +" ,ReleaseDate :"+this.releaseDate;
+        return super.getInfo() + " ,issueNo :" + this.issueNo + " ,ReleaseDate :" + this.releaseDate;
     }
+
+    @Override
+    public String toString() {
+        return "Magazine{" + "issueNo=" + issueNo + ", releaseDate=" + releaseDate + '}';
+    }
+
 }

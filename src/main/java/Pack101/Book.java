@@ -4,11 +4,14 @@
  */
 package Pack101;
 
+import java.util.Objects;
+
 /**
  *
  * @author maria
  */
-public class Book implements Display{
+public class Book implements Display {
+
     private BirthDate date;
     private Author author;
     private String title;
@@ -20,14 +23,18 @@ public class Book implements Display{
     public Book() {
     }
 
-    public Book(BirthDate date, Author author, String title, int no, String genre, int version, int count) {
+    public Book(BirthDate date, Author author, String title, int no, String genre, int version) {
         this.date = date;
         this.author = author;
         this.title = title;
         this.no = no;
         this.genre = genre;
         this.version = version;
-        this.count = count;
+        count++;
+    }
+
+    public Book(int no) {
+        this.no = no;
     }
 
     public BirthDate getDate() {
@@ -78,23 +85,59 @@ public class Book implements Display{
         this.version = version;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-    
     @Override
-    public boolean inLoan()
-    {
-        return count <= 3;    
+    public boolean inLoan() {
+        return count <= 3;
     }
 
     @Override
     public String getInfo() {
-        return "Title :"+this.title+" ,Author :"+this.author+" ,No :"+this.no+" ,Genre :"+this.genre+" ,Version :"
-        +this.version+" ,Date :"+this.date;
+        return "Title :" + this.title + " ,Author :" + this.author + " ,No :" + this.no + " ,Genre :" + this.genre + " ,Version :"
+                + this.version + " ,Date :" + this.date;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Book other = (Book) obj;
+        if (this.no != other.no) {
+            return false;
+        }
+        if (this.version != other.version) {
+            return false;
+        }
+        if (this.count != other.count) {
+            return false;
+        }
+        if (!Objects.equals(this.title, other.title)) {
+            return false;
+        }
+        if (!Objects.equals(this.genre, other.genre)) {
+            return false;
+        }
+        if (!Objects.equals(this.date, other.date)) {
+            return false;
+        }
+        return Objects.equals(this.author, other.author);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" + "date=" + date + ", author=" + author + ", title=" + title + ", no=" + no + ", genre=" + genre + ", version=" + version + ", count=" + count + '}';
+    }
+
 }
