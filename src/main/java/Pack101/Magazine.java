@@ -4,11 +4,13 @@
  */
 package Pack101;
 
+import java.io.Serializable;
+
 /**
  *
  * @author maria
  */
-public class Magazine extends Book {
+public class Magazine extends Book implements Serializable {
 
     private int issueNo;
     private BirthDate releaseDate;
@@ -54,7 +56,7 @@ public class Magazine extends Book {
 
     @Override
     public String toString() {
-        return "Magazine{" + "issueNo=" + issueNo + ", releaseDate=" + releaseDate + '}';
+        return "Magazine{" + "issueNo=" + issueNo + ", releaseDate=" + releaseDate.toString() + "," + super.toString() + '}';
     }
 
 }

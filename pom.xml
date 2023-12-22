@@ -11,5 +11,12 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>com.mycompany.libraryregstrationsystem.LibraryRegstrationSystem</exec.mainClass>
     </properties>
-    <name>LibraryRegstrationSystem</name>
+    <name>LibraryRegstrationSystem2003</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE190</version>
+        </dependency>
+    </dependencies>
 </project>

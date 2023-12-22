@@ -1,0 +1,15 @@
+01/01/2000,1/Author1/Address1/05/05/1990,Title1,1,Genre1,1
+02/02/2001,2/Author2/Address2/10/10/2000,Title2,2,Genre2,2
+03/03/2002,3/Author3/Address3/15/15/2010,Title3,3,Genre3,3
+04/04/2003,4/Author4/Address4/20/20/2020,Title4,4,Genre4,4
+05/05/2004,5/Author5/Address5/25/25/2030,Title5,5,Genre5,5
+06/06/2005,6/Author6/Address6/30/30/1995,Title6,6,Genre6,6,Conference1,100
+07/07/2006,7/Author7/Address7/35/35/2005,Title7,7,Genre7,7,Conference2,200
+08/08/2007,8/Author8/Address8/40/40/2015,Title8,8,Genre8,8,Conference3,300
+09/09/2008,9/Author9/Address9/45/45/2025,Title9,9,Genre9,9,Conference4,400
+10/10/2009,10/Author10/Address10/50/50/2035,Title10,10,Genre10,10,Conference5,500
+11/11/2010,11/Author11/Address11/55/55/1990,Title11,11,Genre11,11,1,01/01/2022
+12/12/2011,12/Author12/Address12/60/60/2000,Title12,12,Genre12,12,2,02/02/2022
+13/13/2012,13/Author13/Address13/65/65/2010,Title13,13,Genre13,13,3,03/03/2022
+14/14/2013,14/Author14/Address14/70/70/2020,Title14,14,Genre14,14,4,04/04/2022
+15/15/2014,15/Author15/Address15/75/75/2030,Title15,15,Genre15,15,5,05/05/2022

@@ -4,11 +4,13 @@
  */
 package Pack101;
 
+import java.io.Serializable;
+
 /**
  *
  * @author maria
  */
-public class Author {
+public class Author implements Serializable {
 
     private int id;
     private String name;
@@ -25,9 +27,19 @@ public class Author {
         this.bd = bd;
     }
 
+    public static Author fromString(String authorString) {
+        String[] authorParts = authorString.split("-");
+        int id = Integer.parseInt(authorParts[0]);
+        String name = authorParts[1];
+        String address = authorParts[2];
+        BirthDate bd = BirthDate.fromString(authorParts[3]);
+        return new Author(id, name, address, bd);
+    }
+
     public Author(int id, String name) {
         this.id = id;
         this.name = name;
+        this.bd = new BirthDate(0, 0, 0);
     }
 
     public int getId() {
@@ -64,7 +76,11 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" + "id=" + id + ", name=" + name + ", address=" + address + ", bd=" + bd + '}';
+        return id + "/" + name + "/" + address + "/" + bd.toString();
+    }
+
+    public String writeAuthor() {
+        return id + "-" + name + "-" + address + "-" + bd.toString();
     }
 
 }

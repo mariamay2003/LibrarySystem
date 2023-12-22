@@ -4,13 +4,14 @@
  */
 package Pack101;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author maria
  */
-public class Book implements Display {
+public class Book implements Display, Serializable {
 
     private BirthDate date;
     private Author author;
@@ -137,7 +138,7 @@ public class Book implements Display {
 
     @Override
     public String toString() {
-        return "Book{" + "date=" + date + ", author=" + author + ", title=" + title + ", no=" + no + ", genre=" + genre + ", version=" + version + ", count=" + count + '}';
+        return date.toString() + "," + author + "," + title + "," + no + "," + genre + "," + version ;
     }
 
 }

@@ -30,6 +30,10 @@ public class Library {
         return books;
     }
 
+    public void setBooks(ArrayList<Book> bookList) {
+        this.books = bookList;
+    }
+
     public ArrayList<Student> getStudents() {
         return students;
     }
@@ -87,7 +91,7 @@ public class Library {
         Book b3 = new Book();
         boolean p3 = false;
         for (int i = 0; i < books.size(); i++) {
-            if (books.get(i).getTitle().equalsIgnoreCase(name)) {
+            if (books.get(i).getAuthor().getName().equalsIgnoreCase(name)) {
                 b3 = books.get(i);
                 p3 = true;
             }
@@ -101,6 +105,7 @@ public class Library {
 
     public void AddToLoan(Student student, Book book, BirthDate date) {
         Loan loan = new Loan(book, student, date);
+        student.setLo(loan);
         for (int i = 0; i < students.size(); i++) {
             if (student.equals(students.get(i))) {
                 if (student.countDays() < 5 && student.numberOfBooksLoaned() < 3) {
@@ -145,5 +150,4 @@ public class Library {
             return null;
         }
     }
-
 }

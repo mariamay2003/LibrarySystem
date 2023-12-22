@@ -4,11 +4,14 @@
  */
 package Pack101;
 
+import java.io.Serializable;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author maria
  */
-public class BirthDate {
+public class BirthDate implements Serializable {
 
     private int day;
     private int month;
@@ -23,12 +26,26 @@ public class BirthDate {
         this.year = year;
     }
 
+    public static BirthDate fromString(String dateString) {
+        String[] dateParts = dateString.split("/");
+        if (dateParts.length == 3) {
+            int day = Integer.parseInt(dateParts[0]);
+            int month = Integer.parseInt(dateParts[1]);
+            int year = Integer.parseInt(dateParts[2]);
+            return new BirthDate(day, month, year);
+        } else {
+            throw new IllegalArgumentException("Invalid date format: " + dateString);
+        }
+    }
+
     public int getDay() {
         return day;
     }
 
     public void setDay(int day) {
+
         this.day = day;
+
     }
 
     public int getMonth() {
@@ -46,4 +63,10 @@ public class BirthDate {
     public void setYear(int year) {
         this.year = year;
     }
+
+    @Override
+    public String toString() {
+        return day + "/" + month + "/" + year;
+    }
+
 }
