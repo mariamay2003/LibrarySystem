@@ -3,6 +3,8 @@
  */
 package Pack101;
 
+import Pack102.MainGUI;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -12,14 +14,16 @@ import java.util.Scanner;
 public class LibraryRegstrationSystem {
 
     public static void main(String[] args) {
-
+        //Pack102.MainGUI.main(args);
         // Create a scanner object for user input
         Scanner sc1 = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         Scanner sc3 = new Scanner(System.in);
         Scanner sc4 = new Scanner(System.in);
+        Scanner sc5 = new Scanner(System.in);
         // Create a registration system object
         Library library = new Library();
+        library.setBooks(DataManager.loadBooksFromFile());
         int choice;
         while (true) {
             // Display a menu for the user
@@ -98,6 +102,9 @@ public class LibraryRegstrationSystem {
                     if (book != null) {
                         // Add the book to the system
                         library.addBook(book);
+
+                        //MainGUI.library.getBooks().add(book);
+                        DataManager.saveBooksToFile(library.getBooks());
                         // Display a success message
                         System.out.println("Book added successfully!");
                     }
@@ -111,8 +118,15 @@ public class LibraryRegstrationSystem {
                     System.out.print("Book no: ");
                     int bookNo = sc2.nextInt();
                     sc2.nextLine();
-                    System.out.println("enter current date :");
-                    BirthDate date2 = new BirthDate(sc1.nextInt(), sc1.nextInt(), sc1.nextInt());
+                    /*System.out.println("enter current date :");
+                    BirthDate date2 = new BirthDate(sc1.nextInt(), sc1.nextInt(), sc1.nextInt());*/
+                    LocalDate currentDate = LocalDate.now();
+                    // Create a BirthDate object using the current date
+                    BirthDate date2 = new BirthDate(
+                            currentDate.getDayOfMonth(),
+                            currentDate.getMonthValue(),
+                            currentDate.getYear()
+                    );
                     // Declare variables for the student and the book objects
                     Student student = null;
                     Book book1 = null;
@@ -190,6 +204,7 @@ public class LibraryRegstrationSystem {
                     {
                         System.out.println("Book not found!");
                     }
+
                     break;
 
                 case 6:

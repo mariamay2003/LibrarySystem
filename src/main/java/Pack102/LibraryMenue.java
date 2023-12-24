@@ -212,14 +212,14 @@ public class LibraryMenue extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        String bName = JOptionPane.showInputDialog("Enter book name:");
-        if (!bName.isBlank()) {
+       String bName = JOptionPane.showInputDialog("Enter book name:");
+        if(!bName.isBlank()){
             if (MainGUI.library.removeFromLoan(bName)) {
-                JOptionPane.showMessageDialog(null, "Book returned successfully !!!");
-            } else {
-                //System.out.println("book not exist !");
-                JOptionPane.showMessageDialog(null, "Book not exist!");
-            }
+            JOptionPane.showMessageDialog(null, "Book returned successfully !!!");
+        }else {
+            //System.out.println("book not exist !");
+            JOptionPane.showMessageDialog(null, "Book not exist!");
+         }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 

@@ -143,8 +143,8 @@ public class LoanBook extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Declare variables for the student and the book objects
         if (!StudentIDTextField.getText().trim().isEmpty() && !bookNumTextField.getText().trim().isEmpty()) {
-            Student student = null;
-            Book book1 = null;
+            Student student=null ;
+            Book book1=null;
             // Loop through the students list
             int id = Integer.parseInt(StudentIDTextField.getText());
             int bNum = Integer.parseInt(bookNumTextField.getText());
@@ -154,7 +154,7 @@ public class LoanBook extends javax.swing.JFrame {
                     // Assign the student object
                     student = s;
                     // Break the loop
-                    JOptionPane.showMessageDialog(null, "s found");
+                    JOptionPane.showMessageDialog(null, "student found");
                     break;
                 }
             }
@@ -177,10 +177,12 @@ public class LoanBook extends javax.swing.JFrame {
                     currentDate.getYear()
             );
             // Check if the student and the book objects are not null
-            if (student != null && book1 != null) {
+            if (student != null ) {
                 MainGUI.library.AddToLoan(student, book1, date);
-                System.out.println(date.getDay() + date.getYear());
+                String result = "you must return the book on :" + (date.getDay() + 5) + "" + date.getYear() + "";
                 JOptionPane.showMessageDialog(null, "Book loan successfully!");
+                JOptionPane.showMessageDialog(null, result);
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Book or Student not found!");
             }

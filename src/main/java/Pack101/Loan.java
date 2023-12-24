@@ -14,7 +14,7 @@ public class Loan {
 
     private Book book;
     private Student student;
-    private BirthDate dueDate;
+    private BirthDate date;
     private int incLoans;
     private int decLoans;
 
@@ -24,7 +24,7 @@ public class Loan {
     public Loan(Book book, Student student, BirthDate dueDate) {
         this.book = book;
         this.student = student;
-        this.dueDate = dueDate;
+        this.date = dueDate;
     }
 
     public Book getBook() {
@@ -43,12 +43,12 @@ public class Loan {
         this.student = student;
     }
 
-    public BirthDate getDueDate() {
-        return dueDate;
+    public BirthDate getDate() {
+        return date;
     }
 
-    public void setDueDate(BirthDate dueDate) {
-        this.dueDate = dueDate;
+    public void setDate(BirthDate date) {
+        this.date = date;
     }
 
     public int incrementLoans() {
@@ -66,7 +66,7 @@ public class Loan {
         int hash = 5;
         hash = 59 * hash + Objects.hashCode(this.book);
         hash = 59 * hash + Objects.hashCode(this.student);
-        hash = 59 * hash + Objects.hashCode(this.dueDate);
+        hash = 59 * hash + Objects.hashCode(this.date);
         return hash;
     }
 
@@ -88,7 +88,7 @@ public class Loan {
         if (!Objects.equals(this.student, other.student)) {
             return false;
         }
-        return Objects.equals(this.dueDate, other.dueDate);
+        return Objects.equals(this.date, other.date);
     }
 
 }

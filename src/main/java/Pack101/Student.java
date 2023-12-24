@@ -142,7 +142,7 @@ public class Student {
 
     public int countDays() {
         int day = c.get(Calendar.DAY_OF_MONTH);
-        BirthDate d = lo.getDueDate();
+        BirthDate d = lo.getDate();
         int totDays = Math.abs(day - d.getDay());
         return totDays;
     }

@@ -12,9 +12,9 @@ import java.util.ArrayList;
  */
 public class Library {
 
-    ArrayList<Loan> loans;
-    ArrayList<Book> books;
-    ArrayList<Student> students;
+    private ArrayList<Loan> loans;
+    private ArrayList<Book> books;
+    private ArrayList<Student> students;
 
     public Library() {
         loans = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Library {
     public ArrayList<Book> getBooks() {
         return books;
     }
-
+    
     public void setBooks(ArrayList<Book> bookList) {
         this.books = bookList;
     }
@@ -40,14 +40,6 @@ public class Library {
 
     public void addStudent(Student student) {
         students.add(student);
-    }
-
-    public void deleteStudent(int id) {
-        for (int i = 0; i < students.size(); i++) {
-            if (id == students.get(i).getId()) {
-                students.remove(i);
-            }
-        }
     }
 
     public void addBook(Book book) {
@@ -105,7 +97,6 @@ public class Library {
 
     public void AddToLoan(Student student, Book book, BirthDate date) {
         Loan loan = new Loan(book, student, date);
-        student.setLo(loan);
         for (int i = 0; i < students.size(); i++) {
             if (student.equals(students.get(i))) {
                 if (student.countDays() < 5 && student.numberOfBooksLoaned() < 3) {
@@ -134,20 +125,6 @@ public class Library {
         return bool;
     }
 
-    public Student searchStudentById(int id) {
-        boolean p4 = false;
-        Student student = new Student();
-        for (int i = 0; i < students.size(); i++) {
-            if (students.get(i).getId() == id) {
-                student = students.get(i);
-                p4 = true;
-                break;
-            }
-        }
-        if (p4) {
-            return student;
-        } else {
-            return null;
-        }
-    }
-}
+ }
+
+
